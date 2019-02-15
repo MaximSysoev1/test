@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<web-app>
+    <servlet>
+        <servlet-name>Signin</servlet-name>
+        <servlet-class>servlet.SignIn</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Signin</servlet-name>
+        <url-pattern>/signin</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>List</servlet-name>
+        <servlet-class>servlet.ListServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>List</servlet-name>
+        <url-pattern>/list</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Create categoryes</servlet-name>
+        <servlet-class>servlet.AddCat</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Create categoryes</servlet-name>
+        <url-pattern>/addcat</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Edit item</servlet-name>
+        <servlet-class>servlet.EditItem</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Edit item</servlet-name>
+        <url-pattern>/edititem</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Edit categoryes</servlet-name>
+        <servlet-class>servlet.EditCat</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Edit categoryes</servlet-name>
+        <url-pattern>/editcat</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Create items</servlet-name>
+        <servlet-class>servlet.AddItem</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Create items</servlet-name>
+        <url-pattern>/additem</url-pattern>
+    </servlet-mapping>
+
+    <context-param>
+        <param-name>uploadDirectory</param-name>
+        <param-value>/img</param-value>
+    </context-param>
+
+        <filter>
+            <filter-name>AuthFilter</filter-name>
+            <filter-class>servlet.AuthFilter</filter-class>
+        </filter>
+        <filter-mapping>
+            <filter-name>AuthFilter</filter-name>
+            <url-pattern>*</url-pattern>
+        </filter-mapping>
+
+
+
+    <filter>
+        <filter-name>EncodingFilter</filter-name>
+        <filter-class>org.apache.catalina.filters.SetCharacterEncodingFilter</filter-class>
+        <init-param>
+                    <param-name>encoding</param-name>
+                     <param-value>UTF-8</param-value>
+                 </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>EncodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+</web-app>
